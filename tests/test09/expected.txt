@@ -1,0 +1,14 @@
+301 1 1 	PROGRAM	 KEYWORDS
+303 2 1 	BEGIN	 KEYWORDS
+
+signal-program
+*program
+**PROGRAM
+**procedure-identifier
+***identifier
+
+
+Parser:Error(line 1, column 8): Expected identifier
+
+
+;

@@ -1,0 +1,84 @@
+301 1 1 	PROGRAM	 KEYWORDS
+601 1 9 	MYP	 IDENTIFIER
+59  1 12 	 ; 	 DELIMITER
+302 3 1 	CONST	 KEYWORDS
+602 4 1 	A	 IDENTIFIER
+61  4 3 	 = 	 DELIMITER
+501 4 5 	12	 CONSTANT
+602 5 1 	A	 IDENTIFIER
+61  5 3 	 = 	 DELIMITER
+501 5 5 	12	 CONSTANT
+303 7 1 	BEGIN	 KEYWORDS
+304 8 1 	END	 KEYWORDS
+
+signal-program
+*program
+**PROGRAM
+**procedure-identifier
+***identifier
+****MYP
+**;
+**block
+***declarations
+****constant-declarations
+*****CONST
+*****constant-declarations-list
+******constant-declaration
+*******constant-identifier
+********identifier
+*********A
+*******=
+*******constant
+********12
+******constant-declarations-list
+*******constant-declaration
+********constant-identifier
+*********identifier
+**********A
+********=
+********constant
+*********12
+*******constant-declarations-list
+********empty
+***BEGIN
+***statements-list
+****empty
+***END
+
+
+Parser:Error(line 8, column 4): Expected .
+
+
+;MYP 
+
+data SEGMENT
+
+A  equ 12
+ equ 12
+
+data ENDS
+
+code SEGMENT
+
+	ASSUME cs:code, ds:data
+begin:
+	push	ebp
+	mov	ebp, esp
+	xor	eax, eax
+	mov	esp, ebp
+	pop	ebp
+
+
+	ret   0
+
+	mov ax, 4c00h
+	int 21h
+code ENDS
+	end begin
+
+
+
+
+
+Code Generator:Error(line 5, column 1): Redefinition of A
+

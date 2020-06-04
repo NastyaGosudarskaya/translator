@@ -1,0 +1,91 @@
+301 1 1 	PROGRAM	 KEYWORDS
+601 1 9 	MYPROG1	 IDENTIFIER
+59  1 16 	 ; 	 DELIMITER
+302 3 1 	CONST	 KEYWORDS
+602 3 7 	B	 IDENTIFIER
+61  3 9 	 = 	 DELIMITER
+501 3 11 	+12	 CONSTANT
+603 4 1 	C	 IDENTIFIER
+61  4 2 	 = 	 DELIMITER
+502 4 3 	+7	 CONSTANT
+604 5 1 	D	 IDENTIFIER
+61  5 2 	 = 	 DELIMITER
+503 5 3 	-89	 CONSTANT
+605 6 1 	E	 IDENTIFIER
+61  6 2 	 = 	 DELIMITER
+504 6 3 	6#2	 CONSTANT
+303 10 1 	BEGIN	 KEYWORDS
+
+signal-program
+*program
+**PROGRAM
+**procedure-identifier
+***identifier
+****MYPROG1
+**;
+**block
+***declarations
+****constant-declarations
+*****CONST
+*****constant-declarations-list
+******constant-declaration
+*******constant-identifier
+********identifier
+*********B
+*******=
+*******constant
+********+12
+******constant-declarations-list
+*******constant-declaration
+********constant-identifier
+*********identifier
+**********C
+********=
+********constant
+*********+7
+*******constant-declarations-list
+********constant-declaration
+*********constant-identifier
+**********identifier
+***********D
+*********=
+*********constant
+**********-89
+********constant-declarations-list
+*********constant-declaration
+**********constant-identifier
+***********identifier
+************E
+**********=
+**********constant
+***********6#2
+*********constant-declarations-list
+**********empty
+***BEGIN
+***statements-list
+****empty
+
+
+Parser:Error(line 10, column 6): Expected END
+
+
+;MYPROG1 
+
+data SEGMENT
+
+B  equ +12
+C  equ +7
+D  equ -89
+E  equ 6#2
+
+data ENDS
+
+code SEGMENT
+
+	ASSUME cs:code, ds:data
+begin:
+	push	ebp
+	mov	ebp, esp
+	xor	eax, eax
+	mov	esp, ebp
+	pop	ebp

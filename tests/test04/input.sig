@@ -1,0 +1,8 @@
+PROGRAM MYP;
+
+CONST 
+A = 12
+A = 12
+
+BEGIN
+END

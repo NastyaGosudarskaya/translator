@@ -1,0 +1,54 @@
+301 1 1 	PROGRAM	 KEYWORDS
+601 1 9 	MYPROG1	 IDENTIFIER
+59  1 16 	 ; 	 DELIMITER
+302 4 1 	CONST	 KEYWORDS
+303 5 1 	BEGIN	 KEYWORDS
+304 6 1 	END	 KEYWORDS
+46  6 5 	 . 	 DELIMITER
+
+signal-program
+*program
+**PROGRAM
+**procedure-identifier
+***identifier
+****MYPROG1
+**;
+**block
+***declarations
+****constant-declarations
+*****CONST
+*****constant-declarations-list
+******empty
+***BEGIN
+***statements-list
+****empty
+***END
+**.
+
+;MYPROG1 
+
+data SEGMENT
+
+
+data ENDS
+
+code SEGMENT
+
+	ASSUME cs:code, ds:data
+begin:
+	push	ebp
+	mov	ebp, esp
+	xor	eax, eax
+	mov	esp, ebp
+	pop	ebp
+
+
+	ret   0
+
+	mov ax, 4c00h
+	int 21h
+code ENDS
+	end begin
+
+
+
